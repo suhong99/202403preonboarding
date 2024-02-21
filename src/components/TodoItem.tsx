@@ -8,8 +8,8 @@ function TodoItem({ todo }: { todo: TodoState }) {
     dispatch(__deleteTodo(todo.id));
   };
   return (
-    <div className="flex flex-row">
-      <div>{todo.detail}</div>
+    <div className="w-full max-2xl flex flex-col items-center border py-2 aspect-video ">
+      <div className="flex-grow break-all px-3">{todo.detail}</div>
       <Button onClick={deleteTodo} type="delete" />
     </div>
   );
