@@ -1,10 +1,10 @@
-import Button from './components/shared/Button'
+import TodoAdder from './components/TodoAdder'
 
 function App() {
   return (
     <div>
       <header>TODO LIST</header>
-      <Button></Button>
+      <TodoAdder />
     </div>
   )
 }
