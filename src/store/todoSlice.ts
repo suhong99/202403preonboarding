@@ -6,7 +6,12 @@ export interface TodoState {
   detail: string;
 }
 
-const initialState: TodoState[] = [{ id: '1234', detail: '테스트용' }];
+const initialState: TodoState[] = [
+  { id: '1234', detail: '과제 1번 하기' },
+  { id: '1235', detail: '과제 2번 하기' },
+  { id: '1236', detail: '스토리북 적용하기' },
+  { id: '1237', detail: '테스트코드 작성하기' },
+];
 
 export const todoListSlice = createSlice({
   name: 'todoList',
