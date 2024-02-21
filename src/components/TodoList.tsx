@@ -1,14 +1,14 @@
 import { useAppSelector } from '../store/hooks/useRedux';
 import { __todoList, TodoState } from '../store/todoSlice';
+import TodoItem from './TodoItem';
 
 function TodoList() {
   const list = useAppSelector(__todoList);
-  console.log(list, list);
 
   return (
     <div>
       {list.map((todo: TodoState) => (
-        <div key={todo.id}>{todo.detail}</div>
+        <TodoItem key={todo.id} todo={todo} />
       ))}
     </div>
   );
