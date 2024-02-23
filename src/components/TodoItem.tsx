@@ -1,6 +1,6 @@
 import { useAppDispatch } from '../store/hooks/useRedux';
 import { TodoState, __deleteTodo } from '../store/todoSlice';
-import Button from './Button';
+import Button from './shared/Button';
 
 function TodoItem({ todo }: { todo: TodoState }) {
   const dispatch = useAppDispatch();
