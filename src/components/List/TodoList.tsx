@@ -1,5 +1,5 @@
-import { useAppSelector } from '../store/hooks/useRedux';
-import { __todoList, TodoState } from '../store/todoSlice';
+import { useAppSelector } from '../../store/hooks/useRedux';
+import { __todoList, TodoState } from '../../store/todoSlice';
 import TodoItem from './TodoItem';
 
 function TodoList() {

@@ -1,5 +1,5 @@
-import TodoAdder from './components/TodoAdder';
-import TodoList from './components/TodoList';
+import TodoAdder from './components/List/TodoAdder';
+import TodoList from './components/List/TodoList';
 
 function App() {
   return (

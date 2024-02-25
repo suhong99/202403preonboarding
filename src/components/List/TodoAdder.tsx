@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import Button from './shared/Button';
-import { useAppDispatch } from '../store/hooks/useRedux';
+import Button from '../shared/Button';
+import { useAppDispatch } from '../../store/hooks/useRedux';
 import { nanoid } from 'nanoid';
-import { __addTodo } from '../store/todoSlice';
-import Input from './shared/Input';
+import { __addTodo } from '../../store/todoSlice';
+import Input from '../shared/Input';
 function TodoAdder() {
   const dispatch = useAppDispatch();
 
