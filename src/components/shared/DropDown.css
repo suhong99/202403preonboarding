@@ -1,0 +1,24 @@
+.dropHeader {
+  cursor: pointer;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: flex;
+  border-radius: 4px;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 200px;
+  position: relative;
+  min-height: 50px;
+  margin: 5px;
+}
+
+.dropHeader.open {
+  border-color: #4367bc;
+}
+
+.dropIcon {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  transform: translateY(-50%);
+}
