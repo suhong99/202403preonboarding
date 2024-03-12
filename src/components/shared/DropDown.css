@@ -22,3 +22,16 @@
   right: 5%;
   transform: translateY(-50%);
 }
+
+.dropdown-label {
+  font-size: 10px;
+}
+
+.dropdown-value {
+  font-weight: 500;
+}
+
+.selected {
+  font-weight: 600;
+  background-color: #9e8788;
+}
