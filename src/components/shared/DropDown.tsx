@@ -76,31 +76,31 @@ const DropDown: React.FC<{ list: DropDownData[] }> = ({ list }) => {
         <span>{dropValue ? dropValue : '선택'}</span>
         <div className="dropIcon">{isOpen ? '⌃' : '⌄'}</div>
       </div>
-      {isOpen &&
-        list.map(({ id, value, label }, index) => (
-          <React.Fragment key={id}>
-            <label
-              className={`dropdown-label ${
-                index === selectedIndex ? 'selected' : ''
-              }`}
-            >
-              {label}
-            </label>
-            <div
-              className={`dropdown-value ${
-                index === selectedIndex ? 'selected' : ''
-              }`}
-            >
-              {value}
-            </div>
-          </React.Fragment>
-        ))}
+      <div className="dropdown-menu">
+        <div className="dropdown-detail">
+          {isOpen &&
+            list.map(({ id, value, label }, index) => (
+              <React.Fragment key={id}>
+                <label htmlFor="drop-detail" className="sr-only">
+                  {label}
+                </label>
+                <div
+                  className={`dropdown-value ${
+                    index === selectedIndex ? 'selected' : ''
+                  }`}
+                >
+                  {value}
+                </div>
+              </React.Fragment>
+            ))}
+        </div>
+      </div>
     </>
   );
 };
 
 export default DropDown;
 
-const DropDownMenu = () => {
-  return <div>메뉴</div>;
-};
+// const DropDownMenu = () => {
+//   return <div>메뉴</div>;
+// };

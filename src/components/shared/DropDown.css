@@ -22,9 +22,13 @@
   right: 5%;
   transform: translateY(-50%);
 }
-
-.dropdown-label {
-  font-size: 10px;
+.dropdown-menu {
+  position: relative;
+}
+.dropdown-detail {
+  position: absolute;
+  top: 100%;
+  left: 0;
 }
 
 .dropdown-value {
