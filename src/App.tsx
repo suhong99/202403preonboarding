@@ -1,6 +1,6 @@
 import TodoAdder from './components/List/TodoAdder';
 import TodoList from './components/List/TodoList';
-import DropDown from './components/shared/DropDown';
+import DropDown from './components/shared/dropdown';
 import { DropDown_Data } from './components/constant/data';
 function App() {
   return (

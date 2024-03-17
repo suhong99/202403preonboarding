@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './DropDown.css';
-import { DropDownData } from '../constant/data';
+import { DropDownData } from '../../constant/data';
 
 // 제네릭으로 타입 넘길것!
 const DropDown: React.FC<{ list: DropDownData[] }> = ({ list }) => {
@@ -100,7 +100,3 @@ const DropDown: React.FC<{ list: DropDownData[] }> = ({ list }) => {
 };
 
 export default DropDown;
-
-// const DropDownMenu = () => {
-//   return <div>메뉴</div>;
-// };
