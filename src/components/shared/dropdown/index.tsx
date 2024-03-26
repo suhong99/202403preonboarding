@@ -1,12 +1,11 @@
 import React from 'react';
 
-interface DropDownProps {
+interface WithChildrenProps {
   children: React.ReactNode;
 }
-
-interface DropDownComponent extends React.FC<DropDownProps> {
+interface DropDownComponent extends React.FC<WithChildrenProps> {
   Trigger: React.FC;
-  Menu: React.FC;
+  Menu: React.FC<WithChildrenProps>;
   Item: React.FC;
 }
 
@@ -18,8 +17,8 @@ const Trigger = () => {
   return <div>드롭 다운</div>;
 };
 
-const Menu = () => {
-  return <div>메뉴</div>;
+const Menu: React.FC<WithChildrenProps> = ({ children }) => {
+  return <div>{children}</div>;
 };
 
 const Item = () => {
