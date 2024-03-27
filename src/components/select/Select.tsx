@@ -4,8 +4,9 @@ import { DropDown_Data } from '../constant/data';
 
 const Select = () => {
   const [isOpen, toggleOpen, value, selectValue] = useDropDown();
+
   return (
-    <DropDown>
+    <DropDown isOpen={isOpen} toggleOpen={toggleOpen}>
       <DropDown.Trigger isOpen={isOpen} toggleOpen={toggleOpen} value={value} />
       <DropDown.Menu isOpen={isOpen}>
         {DropDown_Data.map((e) => {
@@ -13,6 +14,7 @@ const Select = () => {
             <DropDown.Item
               key={e.id}
               value={e.value}
+              selected={e.value === value}
               toggleOpen={toggleOpen}
               setValue={selectValue}
             ></DropDown.Item>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import './DropDown.css';
 
 interface DropDownProps {
@@ -13,14 +13,42 @@ interface WithChildrenProps {
   children: React.ReactNode;
 }
 
-interface DropDownContainer extends React.FC<WithChildrenProps> {
+interface DropDownContainer
+  extends React.FC<
+    WithChildrenProps & Pick<DropDownProps, 'isOpen' | 'toggleOpen'>
+  > {
   Trigger: React.FC<TriggerProps>;
   Menu: React.FC<MenuProps>;
   Item: React.FC<ItemProps>;
 }
 
-const DropDown: DropDownContainer = ({ children }) => {
-  return <div className="dropdown">{children}</div>;
+const DropDown: DropDownContainer = ({ children, isOpen, toggleOpen }) => {
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  // 전역 클릭 이벤트 핸들러
+  const handleGlobalClick = (event: MouseEvent) => {
+    // 클릭한 위치가 드롭다운 영역 내부인지 확인
+    if (
+      isOpen &&
+      dropdownRef.current &&
+      !dropdownRef.current.contains(event.target as Node)
+    ) {
+      toggleOpen();
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('click', handleGlobalClick);
+    return () => {
+      document.removeEventListener('click', handleGlobalClick);
+    };
+  }, [isOpen]);
+
+  return (
+    <div className="dropdown" ref={dropdownRef}>
+      {children}
+    </div>
+  );
 };
 
 type TriggerProps = Omit<DropDownProps, 'setValue' | 'children'>;
@@ -44,15 +72,24 @@ const Menu: React.FC<MenuProps> = ({ children, isOpen }) => {
   return <>{isOpen && <div className="menu">{children}</div>}</>;
 };
 
-type ItemProps = Omit<DropDownProps, 'isOpen' | 'children'>;
+type ItemProps =
+  | Omit<DropDownProps, 'isOpen' | 'children'> & { selected: boolean };
 
-const Item: React.FC<ItemProps> = ({ value, setValue, toggleOpen }) => {
+const Item: React.FC<ItemProps> = ({
+  value,
+  setValue,
+  toggleOpen,
+  selected,
+}) => {
   const onClickValue = () => {
     setValue(value);
     toggleOpen();
   };
   return (
-    <div className="text item" onClick={onClickValue}>
+    <div
+      className={`text item ${selected ? 'current' : ' '}`}
+      onClick={onClickValue}
+    >
       {value}
     </div>
   );
