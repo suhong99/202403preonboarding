@@ -1,9 +1,9 @@
-import React, { useReducer } from 'react';
+import { useReducer, useState } from 'react';
 
 const useDropDown = () => {
   const [open, toggleOpen] = useReducer((v) => !v, false);
-
-  return [open, toggleOpen];
+  const [value, setValue] = useState<string | undefined>();
+  return [open, toggleOpen, value, setValue] as const;
 };
 
 export default useDropDown;

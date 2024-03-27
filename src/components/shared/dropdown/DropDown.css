@@ -1,0 +1,30 @@
+.dropdown {
+  position: relative;
+  display: inline-block;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.trigger {
+  cursor: pointer;
+  padding: 8px 12px;
+}
+
+.menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 100;
+  background-color: #fff;
+  border: 2px solid black;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+.item {
+  padding: 8px 12px;
+}
+
+.item:hover {
+  background-color: #f0f0f0;
+}
