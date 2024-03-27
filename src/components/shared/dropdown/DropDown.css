@@ -2,19 +2,31 @@
   position: relative;
   display: inline-block;
   border: 2px solid black;
-  border-radius: 8px;
+  border-radius: 4px;
+  width: 200px;
 }
 
 .trigger {
   cursor: pointer;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.text {
   padding: 8px 12px;
+  text-align: center;
+}
+
+.open {
+  background-color: #f0f0f0;
 }
 
 .menu {
   position: absolute;
-  top: 100%;
+  top: 103%;
   left: 0;
   z-index: 100;
+  width: 100%;
   background-color: #fff;
   border: 2px solid black;
   border-top: none;
@@ -23,8 +35,14 @@
 
 .item {
   padding: 8px 12px;
+  text-align: center;
+  margin-block: 4px;
 }
 
 .item:hover {
   background-color: #f0f0f0;
+}
+
+.current {
+  font-weight: 800;
 }
