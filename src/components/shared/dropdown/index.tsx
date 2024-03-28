@@ -48,12 +48,8 @@ const Trigger: React.FC<TriggerProps> = ({ isOpen, toggleOpen, value }) => {
   );
 };
 
-interface MenuProps extends WithChildrenProps {
-  isOpen: boolean;
-  value: string | undefined;
-  setValue: React.Dispatch<React.SetStateAction<string | undefined>>;
+interface MenuProps extends DropDownProps {
   list: { id: number; value: string }[];
-  toggleOpen: () => void;
 }
 
 const Menu: React.FC<MenuProps> = ({
