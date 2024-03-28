@@ -15,12 +15,12 @@ const Select = () => {
         list={DropDown_Data}
         toggleOpen={toggleOpen}
       >
-        {DropDown_Data.map((e) => {
+        {DropDown_Data.map((item) => {
           return (
             <DropDown.Item
-              key={e.id}
-              value={e.value}
-              selected={e.value === value}
+              key={item.id}
+              value={item.value}
+              selected={item.value === value}
               toggleOpen={toggleOpen}
               setValue={selectValue}
             ></DropDown.Item>

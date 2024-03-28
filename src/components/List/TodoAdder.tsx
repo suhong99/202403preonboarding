@@ -14,7 +14,7 @@ function TodoAdder() {
   };
 
   return (
-    <div className="flex justify-center gap-2 w-full">
+    <div className="flex justify-center gap-2 w-full my-4">
       <Input value={todo} onChange={setTodo} />
       <Button onClick={addTodo} type="add" />
     </div>
