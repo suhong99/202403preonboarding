@@ -8,7 +8,13 @@ const Select = () => {
   return (
     <DropDown isOpen={isOpen} toggleOpen={toggleOpen}>
       <DropDown.Trigger isOpen={isOpen} toggleOpen={toggleOpen} value={value} />
-      <DropDown.Menu isOpen={isOpen}>
+      <DropDown.Menu
+        isOpen={isOpen}
+        value={value}
+        setValue={selectValue}
+        list={DropDown_Data}
+        toggleOpen={toggleOpen}
+      >
         {DropDown_Data.map((e) => {
           return (
             <DropDown.Item
