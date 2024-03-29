@@ -11,14 +11,8 @@ interface DropDownProps {
   setValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-interface WithChildrenProps {
-  children: React.ReactNode;
-}
-
 interface DropDownContainer
-  extends React.FC<
-    WithChildrenProps & Pick<DropDownProps, 'isOpen' | 'toggleOpen'>
-  > {
+  extends React.FC<Omit<DropDownProps, 'value' | 'setValue'>> {
   Trigger: React.FC<TriggerProps>;
   Menu: React.FC<MenuProps>;
   Item: React.FC<ItemProps>;
