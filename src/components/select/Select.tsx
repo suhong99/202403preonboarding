@@ -19,6 +19,7 @@ const Select = () => {
           return (
             <DropDown.Item
               key={item.id}
+              id={item.id}
               value={item.value}
               selected={item.value === value}
               toggleOpen={toggleOpen}

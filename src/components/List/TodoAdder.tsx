@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Button from '../shared/Button';
 import { useAppDispatch } from '../../store/hooks/useRedux';
-import { nanoid } from 'nanoid';
 import { __addTodo } from '../../store/todoSlice';
 import Input from '../shared/Input';
 function TodoAdder() {
@@ -10,7 +9,7 @@ function TodoAdder() {
   const [todo, setTodo] = useState<string>('');
 
   const addTodo = () => {
-    dispatch(__addTodo({ id: nanoid(), detail: todo }));
+    dispatch(__addTodo({ detail: todo }));
   };
 
   return (
