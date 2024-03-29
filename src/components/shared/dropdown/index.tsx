@@ -11,14 +11,15 @@ interface DropDownProps {
   setValue: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
-interface DropDownContainer
-  extends React.FC<Omit<DropDownProps, 'value' | 'setValue'>> {
-  Trigger: React.FC<TriggerProps>;
-  Menu: React.FC<MenuProps>;
-  Item: React.FC<ItemProps>;
-}
+type DropDownContainerProps = React.FC<
+  Omit<DropDownProps, 'value' | 'setValue'>
+>;
 
-const DropDown: DropDownContainer = ({ children, isOpen, toggleOpen }) => {
+const DropDownContainer: DropDownContainerProps = ({
+  children,
+  isOpen,
+  toggleOpen,
+}) => {
   const dropdownRef = useRef<HTMLDivElement | null>(null);
   useDropClick(isOpen, toggleOpen, dropdownRef);
 
@@ -82,8 +83,8 @@ const Item: React.FC<ItemProps> = ({
   );
 };
 
-DropDown.Trigger = Trigger;
-DropDown.Menu = Menu;
-DropDown.Item = Item;
-
-export default DropDown;
+export const DropDown = Object.assign(DropDownContainer, {
+  Trigger,
+  Menu,
+  Item,
+});

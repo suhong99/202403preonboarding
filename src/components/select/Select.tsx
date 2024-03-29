@@ -1,6 +1,6 @@
-import DropDown from '../shared/dropdown';
 import useDropDown from '../shared/dropdown/hook/useDropDown';
 import { DropDown_Data } from '../constant/data';
+import { DropDown } from '../shared/dropdown';
 
 const Select = () => {
   const [isOpen, toggleOpen, value, selectValue] = useDropDown();
