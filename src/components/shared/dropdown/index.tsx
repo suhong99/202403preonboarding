@@ -24,11 +24,7 @@ const DropDownContainer: DropDownContainerProps = ({
   useDropClick(isOpen, toggleOpen, dropdownRef);
 
   return (
-    <div
-      className="dropdown"
-      ref={dropdownRef}
-      data-testid="dropdown-container"
-    >
+    <div className="dropdown" ref={dropdownRef}>
       {children}
     </div>
   );
@@ -61,15 +57,7 @@ const Menu: React.FC<MenuProps> = ({
 }) => {
   useDropKeyboard(isOpen, value, setValue, list, toggleOpen);
 
-  return (
-    <>
-      {isOpen && (
-        <div data-testid="dropdown-menu" className="menu">
-          {children}
-        </div>
-      )}
-    </>
-  );
+  return <>{isOpen && <div className="menu">{children}</div>}</>;
 };
 
 type ItemProps =
