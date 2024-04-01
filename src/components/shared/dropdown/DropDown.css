@@ -8,8 +8,12 @@
 
 .trigger {
   cursor: pointer;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border: none;
+  padding: 8px 12px;
+  text-align: center;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .text {

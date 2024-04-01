@@ -38,13 +38,12 @@ type TriggerProps = Omit<DropDownProps, 'setValue' | 'children'>;
 
 const Trigger: React.FC<TriggerProps> = ({ isOpen, toggleOpen, value }) => {
   return (
-    <div
-      data-testid="dropdown-container"
+    <button
       className={`trigger text ${isOpen ? 'open' : ''}`}
       onClick={toggleOpen}
     >
       {value ? value : '선택해주세요'}
-    </div>
+    </button>
   );
 };
 
@@ -76,7 +75,6 @@ const Menu: React.FC<MenuProps> = ({
 type ItemProps =
   | Omit<DropDownProps, 'isOpen' | 'children'> & {
       selected: boolean;
-      id: number;
     };
 
 const Item: React.FC<ItemProps> = ({
@@ -84,7 +82,6 @@ const Item: React.FC<ItemProps> = ({
   setValue,
   toggleOpen,
   selected,
-  id,
 }) => {
   const onClickValue = () => {
     setValue(value);
@@ -92,7 +89,7 @@ const Item: React.FC<ItemProps> = ({
   };
   return (
     <div
-      data-testid={'dropdown-item-' + id}
+      data-testid={'dropdown-item'}
       className={`text item ${selected ? 'current' : ' '}`}
       onClick={onClickValue}
     >
