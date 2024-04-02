@@ -77,7 +77,7 @@ const Item: React.FC<ItemProps> = ({
   };
   return (
     <div
-      data-testid={'dropdown-item'}
+      data-testid="dropdown-item"
       className={`text item ${selected ? 'current' : ' '}`}
       onClick={onClickValue}
     >
